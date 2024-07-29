@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathématiques Passion | À propos</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <header>
+    <div class="math-symbols" id="mathSymbols"></div>
+    <div class="container">
+      <nav>
+        <h1>Mathématiques Passion</h1>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <h1>À propos de moi</h1>
+      <p>Découvrez ma passion pour l'enseignement des mathématiques</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-grid">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Un professeur enseignant les mathématiques" class="about-image">
+        <div class="about-text">
+          <h2>Ma mission</h2>
+          <p>En tant que seul instructeur chez Mathématiques Passion, ma mission est de rendre les mathématiques accessibles, compréhensibles et passionnantes pour tous mes élèves. Je crois fermement que chaque individu a le potentiel de réussir en mathématiques avec le bon accompagnement et les bonnes méthodes d'apprentissage.</p>
+          <p>Depuis que j'ai commencé cette aventure en 2010, j'ai eu le privilège d'aider des centaines d'élèves à surmonter leurs difficultés, à gagner en confiance et à exceller dans leurs études mathématiques. Mon approche pédagogique personnalisée permet à chaque élève de progresser à son rythme et de développer une véritable passion pour les mathématiques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solo-instructor">
+    <div class="container">
+      <h2>Votre instructeur dédié</h2>
+      <div class="instructor-profile">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Jean Dupont" width="200" height="200">
+        <h3>Jean Dupont</h3>
+        <p>Fondateur et Professeur de mathématiques</p>
+        <p>Diplômé en mathématiques et passionné par l'enseignement, je mets toute mon énergie et mon expertise au service de mes élèves. Avec plus de 15 ans d'expérience dans l'enseignement, je suis déterminé à faire une différence dans la vie de chaque élève que j'accompagne.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Mathématiques Passion. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mathSymbols = ['∑', '∫', 'π', '√', '∞', '≈', '≠', '∈', '∀', '∃', 'Δ', '∇', '∂', 'α', 'β', 'γ', 'λ', 'θ'];
+    const symbolsContainer = document.getElementById('mathSymbols');
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('math-symbol');
+      symbol.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = `${Math.random() * 100}%`;
+      symbol.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      symbol.style.animationDelay = `${Math.random() * 5}s`;
+      symbolsContainer.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbolsContainer.removeChild(symbol);
+        createSymbol();
+      });
+    }
+
+    for (let i = 0; i < 20; i++) {
+      createSymbol();
+    }
+  </script>
+</body>
+</html>

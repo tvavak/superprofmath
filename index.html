@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathématiques Passion | Accueil</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header>
+    <div class="math-symbols" id="mathSymbols"></div>
+    <div class="container">
+      <nav>
+        <h1>Mathématiques Passion</h1>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Découvrez la passion des mathématiques</h1>
+    <p>Du collège au lycée, nous vous accompagnons vers la réussite</p>
+    <a href="contact.html" class="cta-button">Commencez maintenant</a>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Pourquoi choisir Mathématiques Passion ?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Expertise pédagogique</h3>
+          <p>Des professeurs expérimentés et passionnés</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-user-friends"></i>
+          <h3>Accompagnement personnalisé</h3>
+          <p>Des cours adaptés à votre niveau et vos objectifs</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Progrès garantis</h3>
+          <p>Améliorez vos résultats et gagnez en confiance</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Méthodes innovantes</h3>
+          <p>Des approches pédagogiques modernes et efficaces</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Mathématiques Passion. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    const mathSymbols = ['∑', '∫', 'π', '√', '∞', '≈', '≠', '∈', '∀', '∃', 'Δ', '∇', '∂', 'α', 'β', 'γ', 'λ', 'θ'];
+    const symbolsContainer = document.getElementById('mathSymbols');
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('math-symbol');
+      symbol.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = `${Math.random() * 100}%`;
+      symbol.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      symbol.style.animationDelay = `${Math.random() * 5}s`;
+      symbolsContainer.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbolsContainer.removeChild(symbol);
+        createSymbol();
+      });
+    }
+
+    for (let i = 0; i < 20; i++) {
+      createSymbol();
+    }
+  </script>
+</body>
+</html>

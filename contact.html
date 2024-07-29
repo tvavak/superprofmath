@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathématiques Passion | Contact</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <header>
+    <div class="math-symbols" id="mathSymbols"></div>
+    <div class="container">
+      <nav>
+        <h1>Mathématiques Passion</h1>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <h1>Contactez-moi</h1>
+      <p>Voici les informations nécessaires pour me joindre</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-info">
+        <h2>Informations de contact</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-user"></i>
+            <p>Jean Dupont</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p><a href="mailto:contact@mathematiques-passion.fr">contact@mathematiques-passion.fr</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>123 Rue des Mathématiques, 75001 Paris</p>
+          </div>
+        </div>
+        <div class="hours">
+          <h3>Horaires d'ouverture</h3>
+          <p>Lundi - Vendredi : 9h - 18h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Mathématiques Passion. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mathSymbols = ['∑', '∫', 'π', '√', '∞', '≈', '≠', '∈', '∀', '∃', 'Δ', '∇', '∂', 'α', 'β', 'γ', 'λ', 'θ'];
+    const symbolsContainer = document.getElementById('mathSymbols');
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('math-symbol');
+      symbol.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = `${Math.random() * 100}%`;
+      symbol.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      symbol.style.animationDelay = `${Math.random() * 5}s`;
+      symbolsContainer.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbolsContainer.removeChild(symbol);
+        createSymbol();
+      });
+    }
+
+    for (let i = 0; i < 20; i++) {
+      createSymbol();
+    }
+  </script>
+</body>
+</html>

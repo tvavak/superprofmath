@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathématiques Passion | Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="math-symbols" id="mathSymbols"></div>
+    <div class="container">
+      <nav>
+        <h1>Mathématiques Passion</h1>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <h1>Nos Services</h1>
+      <p>Découvrez comment nous pouvons vous aider à progresser en mathématiques</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Cours particuliers</h3>
+          <p>Des séances individuelles adaptées à votre niveau et vos besoins spécifiques.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-users"></i>
+          <h3>Cours en petits groupes</h3>
+          <p>Apprenez en collaboration avec d'autres élèves dans un environnement stimulant.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-laptop"></i>
+          <h3>Cours en ligne</h3>
+          <p>Bénéficiez d'un enseignement de qualité depuis le confort de votre domicile.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-book"></i>
+          <h3>Préparation aux examens</h3>
+          <p>Préparez-vous efficacement pour réussir vos examens et concours.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Soutien scolaire</h3>
+          <p>Un accompagnement régulier pour progresser tout au long de l'année.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Ateliers thématiques</h3>
+          <p>Des sessions intensives sur des sujets spécifiques pour approfondir vos connaissances.</p>
+          <a href="#" class="btn">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Mathématiques Passion. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    const mathSymbols = ['∑', '∫', 'π', '√', '∞', '≈', '≠', '∈', '∀', '∃', 'Δ', '∇', '∂', 'α', 'β', 'γ', 'λ', 'θ'];
+    const symbolsContainer = document.getElementById('mathSymbols');
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('math-symbol');
+      symbol.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = `${Math.random() * 100}%`;
+      symbol.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      symbol.style.animationDelay = `${Math.random() * 5}s`;
+      symbolsContainer.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbolsContainer.removeChild(symbol);
+        createSymbol();
+      });
+    }
+
+    for (let i = 0; i < 20; i++) {
+      createSymbol();
+    }
+  </script>
+</body>
+</html>
